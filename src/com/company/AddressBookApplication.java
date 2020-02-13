@@ -1,8 +1,45 @@
 package com.company;
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 
 public class AddressBookApplication {
 
-    public static void initAddressBookExercise(AddressBook ab){
+    public static void init() throws FileNotFoundException { //exercise I/O
+        FileReader file_input = new FileReader("AddressInputDataFile.txt");
+        BufferedReader BR = new BufferedReader(file_input);
+        AddressEntry entry;
+        AddressBook ab = new AddressBook();
+
+        try{
+            String inS = BR.readLine();
+            while(inS != null) {
+                entry = new AddressEntry();
+
+                entry.setFirstName(inS);
+                entry.setLastName(BR.readLine());
+                entry.setStreet(BR.readLine());
+                entry.setCity(BR.readLine());
+                entry.setState(BR.readLine());
+                entry.setZip(Integer.parseInt(BR.readLine()));
+                entry.setEmail(BR.readLine());
+                entry.setPhone(BR.readLine());
+
+                ab.add(entry);
+                inS = BR.readLine();
+            }
+
+
+        }catch(IOException e){
+            System.out.println("error reading from file");
+        }
+
+        ab.list();
+
+    }
+
+    public static void initAddressBookExercise(AddressBook ab){ //exercise 2
         AddressEntry entry1 = new AddressEntry();
 
         entry1.setFirstName("Test");
@@ -37,7 +74,15 @@ public class AddressBookApplication {
         AddressBook ab = new AddressBook();
         initAddressBookExercise(ab);
 
+        try{
+            init();
+        }catch(FileNotFoundException e){
+            System.out.println("input.txt file not found");
+        }
+
         /*
+
+        //exercise 1
         //simply invokes static methods of the Menu class
 
         Menu.prompt_FirstName();

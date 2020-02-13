@@ -1,23 +1,37 @@
+/**
+ * The AddressBook class contains a list of AddressEntry objects
+ *
+ * @author John Gilcreast
+ * @version 1.0
+ * @since February 13 2020
+ *
+ * Purpose: A class that represents an address book of personal contacts.
+ * Each contact has personal info associated with them.
+ */
+
 package com.company;
+import java.util.ArrayList;
 
 public class AddressBook {
-    private int entryCount; //how many entries there are in addressEntryList
-    private AddressEntry[] addressEntryList;
+    /**
+     * List of AddressEntry objects
+     */
+    private ArrayList<Object> addressEntryList = new ArrayList<>();
 
-
-    AddressBook(){
-        this.addressEntryList = new AddressEntry[50];
-        this.entryCount = 0;
-    }
-
+    /**
+     * list() prints all AddressEntry objects in addressEntryList
+     */
     void list(){
-        for (int i = 0; i < entryCount; i++){
-            System.out.println(addressEntryList[i]);
+        for (int i = 0; i < addressEntryList.size(); i++){
+            System.out.println(addressEntryList.get(i));
         }
     }
 
+    /**
+     * Adds an existing AddressEntry object to this AddressBook object
+     * @param obj is a populated AddressEntry object
+     */
     void add(AddressEntry obj){
-        addressEntryList[entryCount] = obj;
-        entryCount++;
+        addressEntryList.add(obj);
     }
 }
