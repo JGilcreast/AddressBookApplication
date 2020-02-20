@@ -80,22 +80,5 @@ public class AddressBookApplication {
             System.out.println("input.txt file not found");
         }
 
-        /*
-
-        //exercise 1
-        //simply invokes static methods of the Menu class
-
-        Menu.prompt_FirstName();
-
-        Menu.prompt_LastName();
-
-        //***YOU NOW FINISH CODE TO CALL ALL the rest of the static methods of the Menu class
-        Menu.prompt_Street();
-        Menu.prompt_City();
-        Menu.prompt_State();
-        Menu.prompt_Zip();
-        Menu.prompt_Telephone();
-        Menu.prompt_Email();
-        */
     }
 }

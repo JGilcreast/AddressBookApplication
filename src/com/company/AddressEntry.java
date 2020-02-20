@@ -71,16 +71,21 @@ public class AddressEntry {
         this.email = inEmail;
     }
 
+
     /**
      * Formats objects data into a string
      *
      * @return Returns a formatted string of the AddressEntry object's data
      */
     public String toString(){
-        return String.format("%s %s, %s %s, %s %d, %s / %s ",
+        return String.format("%s %s\n %s\n %s, %s %d\n %s\n %s\n",
                 this.firstName, this.lastName, this.street, this.city, this.state, this.zip,
-                this.phone, this.email);
-        //firstname lastname, street city, state zip, phone / email
+                this.email, this.phone);
+        //firstname lastname
+        //street
+        //city, state zip
+        //email
+        //phone
     }
 
     /**
@@ -204,3 +209,4 @@ public class AddressEntry {
         this.zip = input;
     }
 }
+

@@ -1,45 +1,74 @@
+/**
+ *  Menu class, displays prompts for the user to interact with the AddressBook class
+ *  Also responsible for basic input validation
+ *
+ * @author John Gilcreast
+ * @version 1.0
+ * @since February 19 2020
+ *
+ * Purpose: Acts as a user interface for the AddressBook class
+ */
+
 package com.company;
-
-/** Menu class currently only has static methods to prompt to standard output information about a Contact like name,etc
- **/
-
-class Menu {
+public class Menu {
 
     /**
-     * prompt_FirstName  generates a standard output prompt for the First Name to be entered
+     * Prompts the user for FirstName input
      */
-    public static void prompt_FirstName() {
-
+    public void prompt_FirstName() {
         System.out.println("First Name:");
-
     }
 
-    //*****NOW you create code for the other methods required for this Exercise ********
-    public static void prompt_LastName() {
+    /**
+     * Prompts the user for Last field input
+     */
+    public void prompt_LastName() {
         System.out.println("Last Name:");
     }
 
-    public static void prompt_Street() {
+    /**
+     * Prompts the user for Street field input
+     */
+    public void prompt_Street() {
         System.out.println("Street Address:");
     }
 
-    public static void prompt_City() {
+    /**
+     * Prompts the user for City field input
+     */
+    public void prompt_City() {
         System.out.println("City:");
     }
 
-    public static void prompt_State() {
+    /**
+     * Prompts the user for State field input
+     */
+    public void prompt_State() {
         System.out.println("State:");
     }
 
-    public static void prompt_Zip() {
+    /**
+     * Prompts the user for ZIP field input
+     */
+    public  void prompt_Zip() {
         System.out.println("Zip Code:");
     }
 
-    public static void prompt_Telephone() {
+    /**
+     * Prompts the user for Email field input
+     */
+    public void prompt_Email() {
+        System.out.println("Email Address:");
+    }
+
+    /**
+     * Prompts the user for Phone field input
+     */
+    public void prompt_Telephone() {
         System.out.println("Phone number:");
     }
 
-    public static void prompt_Email() {
-        System.out.println("Email Address:");
-    }
+
+
+
 }
