@@ -22,6 +22,7 @@ public class AddressBook {
      * list() prints all AddressEntry objects in addressEntryList
      * Lists are numbered and in alphabetical order
      */
+
     void list() {
         if(addressEntryList.size() == 0){
             System.out.print("There are no entries in this book yet");
@@ -38,18 +39,21 @@ public class AddressBook {
      *
      * @param input String that contains the lastname for the search
      */
-    void listResult(String input) {
-        int count = 1;
+    ArrayList<Object> listResult(String input) {
+        ArrayList<Object> results = new ArrayList<>();
+
         AddressEntry result;
+
         if(addressEntryList.size() == 0){
             System.out.print("There are no entries in this book yet");
         }
         for (int i = 0; i < addressEntryList.size(); i++) {
             result = (AddressEntry) addressEntryList.get(i);
-            if(result.getLastName().equals(input)){
-                System.out.print((count++)+": "+addressEntryList.get(i)+'\n');
+            if(result.getLastName().startsWith(input)){
+                results.add(addressEntryList.get(i));
             }
         }
+        return results;
     }
 
     /**
@@ -96,5 +100,9 @@ public class AddressBook {
         }
 
         addressEntryList.add(obj);
+    }
+
+    void remove(AddressEntry obj) {
+        addressEntryList.remove(obj);
     }
 }
